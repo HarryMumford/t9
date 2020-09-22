@@ -20,4 +20,12 @@ Implement an algorithm that returns an array of strings when given a numerical s
 | `"27"` | `["ap", "aq", "ar", "as", "bp", "bq", "br", "bs", "cp", "cq", "cr", "cs"]` |
 | `"22"` | `["aa", "bb", "cc""]`                                                      |
 
+### Edge cases
+
+I will protect algorithm from invalid on the client side by limiting the input options (i.e. key input)
+
+| Inputs | Outputs |
+| ------ | ------- |
+| `""`   | `[]`    |
+
 ### Tests

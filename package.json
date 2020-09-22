@@ -29,5 +29,10 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "client"
+    ]
   }
 }
