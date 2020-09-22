@@ -1,5 +1,5 @@
 import { Router } from "express";
-import prediction from "./prediction";
+import prediction from "./prediction/prediction";
 
 const allRoutes = Router();
 
