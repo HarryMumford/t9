@@ -16,7 +16,7 @@ I followed TDD for implementing the algorithm on the back end. See my approach h
 
 - API endpoint returns array of strings when given a numeral string
 - Logic is implemented in back end service
-- MVP consists of an input box and list of predictions on the front end and 1 api endpoint on the backend
+- MVP consists of an input numbers and list of predictions on the front end and 1 api endpoint on the backend
 
 ## Technologies Used
 
