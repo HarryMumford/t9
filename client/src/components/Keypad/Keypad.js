@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCombinations } from "../../flux/actions/combinations";
 
 const Keypad = () => {
-  const [number, setNumber] = useState("");
+  let [number, setNumber] = useState("");
 
   const dispatch = useDispatch();
 
@@ -11,10 +11,12 @@ const Keypad = () => {
   const combinations = combinationsState.payload.combinations;
 
   const handleTyping = (event) => {
-    const userInput = event.target.value;
-    setNumber(userInput);
-    dispatch(getCombinations(userInput));
+    const key = event.target.value;
+    setNumber((number += key));
+    dispatch(getCombinations(number));
   };
+
+  const keys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <>
@@ -22,17 +24,25 @@ const Keypad = () => {
         combinations.map((c) => {
           return <div>{c}</div>;
         })}
-      <input
-        type="text"
-        placeholder="Type number here"
-        onChange={handleTyping}
-        value={number}
-      ></input>
+      {keys.map((key) => {
+        return (
+          <button onClick={handleTyping} value={key}>
+            {key}
+          </button>
+        );
+      })}
     </>
   );
 };
 
 export default Keypad;
+
+// <input
+// type="text"
+// placeholder="Type number here"
+// onChange={handleTyping}
+// value={number}
+// ></input>
 
 // import React from "react";
 // import { useEffect } from "react";
