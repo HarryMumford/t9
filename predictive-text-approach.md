@@ -32,9 +32,11 @@ I will protect algorithm from invalid inputs (e.g. non-strings) on the client si
 
 ### Tests in order of complexity
 
+```
 'returns [] when given ""'
 'returns ["0"] when given "0"'
 'returns ["a", "b", "c"] when given "2"'
 'returns ["0a", "0b", "0c"] when given "02"'
 'returns ["ap", "aq", "ar", "as", "bp", "bq", "br", "bs", "cp", "cq", "cr", "cs"] when given "27"'
 'returns array with length 27 when given 222'
+```
