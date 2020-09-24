@@ -41,4 +41,11 @@ describe("numberToLetter", () => {
     ];
     expect(assertion).toEqual(expectedResult);
   });
+
+  it("returns array with length 27 when given 222", () => {
+    const input = "222";
+    const assertionLength = numberToLetterCombination(input).length;
+    const expectedResult = 27;
+    expect(assertionLength).toEqual(expectedResult);
+  });
 });
