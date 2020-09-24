@@ -5,13 +5,14 @@ import {
 } from "./types";
 import axios from "axios";
 
-export const getCombinations = () => async (dispatch) => {
+export const getCombinations = (userInput) => async (dispatch) => {
   try {
     dispatch({
       type: COMBINATIONS_LOADING,
     });
 
-    const res = await axios.get("/combinations?number=22");
+    const query = `?number=${userInput}`;
+    const res = await axios.get(`/combinations${query}`);
 
     dispatch({
       type: COMBINATIONS_SUCCESS,
