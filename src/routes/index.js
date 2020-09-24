@@ -1,5 +1,5 @@
 import { Router } from "express";
-import prediction from "./prediction/prediction";
+import combinations from "./combinations/combinations";
 
 const allRoutes = Router();
 
@@ -7,6 +7,6 @@ allRoutes.get("/", (req, res) => {
   res.status(200).json({ msg: "API connected" });
 });
 
-allRoutes.use("/prediction", prediction);
+allRoutes.use("/combinations", combinations);
 
 export default allRoutes;
