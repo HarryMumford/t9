@@ -1,12 +1,16 @@
-// import React from "react";
+import React from "react";
 
-// const Key = ({index, key}) => {
-//   return (
-//     <button
-//       {index}
-//       {key}
-//     <button/>
-//   );
-// };
+const Key = ({ letters, number, onKeyClick }) => {
+  const handleKeyClick = (e) => {
+    onKeyClick(number);
+  };
 
-// export default Key;
+  return (
+    <button onClick={handleKeyClick}>
+      {number}
+      {letters}
+    </button>
+  );
+};
+
+export default Key;

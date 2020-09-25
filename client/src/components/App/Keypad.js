@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { numberLetterMapping } from "../../constants/numberLetterMapping";
 import { getCombinations } from "../../flux/actions/combinations";
+import Key from "./Key";
 
 const Keypad = () => {
   let [number, setNumber] = useState("");
 
   const dispatch = useDispatch();
 
-  const handleTyping = (event) => {
-    const key = event.target.value;
+  const handleTyping = (key) => {
     setNumber((number += key));
     dispatch(getCombinations(number));
   };
@@ -19,12 +19,8 @@ const Keypad = () => {
   return (
     <>
       {keys.map((key, index) => {
-        return (
-          <button key={index} onClick={handleTyping} value={index}>
-            {index}
-            {key}
-          </button>
-        );
+        const props = { number: index, letters: key, onKeyClick: handleTyping };
+        return <Key key={index} {...props} />;
       })}
     </>
   );
