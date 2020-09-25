@@ -1,7 +1,6 @@
 import React from "react";
 
-const Display = ({ payload }) => {
-  const { combinations } = payload;
+const Display = ({ combinations }) => {
   return (
     <>
       {combinations &&

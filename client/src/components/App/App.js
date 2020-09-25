@@ -1,35 +1,15 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { numberLetterMapping } from "../../constants/numberLetterMapping";
-import { getCombinations } from "../../flux/actions/combinations";
+import React from "react";
+import { useSelector } from "react-redux";
 import Display from "./Display";
+import Keypad from "./Keypad";
 
 const App = () => {
-  let [number, setNumber] = useState("");
-
-  const dispatch = useDispatch();
-
-  const combinationsState = useSelector((state) => state.combinations);
-
-  const handleTyping = (event) => {
-    const key = event.target.value;
-    setNumber((number += key));
-    dispatch(getCombinations(number));
-  };
-
-  const keys = numberLetterMapping;
+  const { payload } = useSelector((state) => state.combinations);
 
   return (
     <>
-      <Display {...combinationsState} />
-      {keys.map((key, index) => {
-        return (
-          <button key={index} onClick={handleTyping} value={index}>
-            {index}
-            {key}
-          </button>
-        );
-      })}
+      <Display {...payload} />
+      <Keypad />
     </>
   );
 };

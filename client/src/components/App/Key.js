@@ -1,19 +1,12 @@
-import React from "react";
+// import React from "react";
 
-const Key = ({ onButtonClick, buttonKey }) => {
-  let handleClick = (e) => {
-    onButtonClick(e.target.textContent);
-  };
+// const Key = ({index, key}) => {
+//   return (
+//     <button
+//       {index}
+//       {key}
+//     <button/>
+//   );
+// };
 
-  return (
-    <button
-      name={buttonKey}
-      className={classNames.join(" ").trim()}
-      onClick={handleClick}
-    >
-      {buttonKey}
-    </button>
-  );
-};
-
-export default Key;
+// export default Key;
