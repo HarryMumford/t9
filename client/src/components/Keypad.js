@@ -26,10 +26,15 @@ const Keypad = () => {
 
   return (
     <Container>
-      {keys.map((key) => {
-        const { number, letters } = key;
-        const props = { number, letters, onKeyClick: handleTyping };
-        return <Key key={number} {...props} />;
+      {keys.map((key, index) => {
+        const { topDisplay, bottomDisplay, number } = key;
+        const props = {
+          number,
+          topDisplay,
+          bottomDisplay,
+          onKeyClick: handleTyping,
+        };
+        return <Key key={index} {...props} />;
       })}
     </Container>
   );

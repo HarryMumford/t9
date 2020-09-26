@@ -17,24 +17,24 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const NumberText = styled(Text)`
+const TopDisplayText = styled(Text)`
   margin-top: 1rem;
   font-size: 1.5rem;
 `;
 
-const LetterText = styled(Text)`
+const BottomDisplayText = styled(Text)`
   font-size: 1rem;
 `;
 
-const Key = ({ letters, number, onKeyClick }) => {
+const Key = ({ bottomDisplay, topDisplay, onKeyClick, number }) => {
   const handleKeyClick = (e) => {
     onKeyClick(number);
   };
 
   return (
     <Button onClick={handleKeyClick}>
-      <NumberText>{number}</NumberText>
-      <LetterText>{letters}</LetterText>
+      <TopDisplayText>{topDisplay}</TopDisplayText>
+      <BottomDisplayText>{bottomDisplay}</BottomDisplayText>
     </Button>
   );
 };

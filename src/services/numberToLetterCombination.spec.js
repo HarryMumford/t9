@@ -1,7 +1,7 @@
 import { numberToLetterCombination } from "./numberToLetterCombination";
 
 describe("numberToLetter", () => {
-  it('returns [] when given ""', () => {
+  it("returns [] when given empty string", () => {
     const input = "";
     const assertion = numberToLetterCombination(input);
     const expectedResult = [];
