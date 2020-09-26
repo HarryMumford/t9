@@ -3,6 +3,14 @@ import { useDispatch } from "react-redux";
 import { numberLetterMapping } from "../utils/constants";
 import { getCombinations } from "../flux/actions/combinations";
 import Key from "./Key";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+`;
 
 const Keypad = () => {
   let [number, setNumber] = useState("");
@@ -17,12 +25,13 @@ const Keypad = () => {
   const keys = numberLetterMapping;
 
   return (
-    <>
-      {keys.map((key, index) => {
-        const props = { number: index, letters: key, onKeyClick: handleTyping };
-        return <Key key={index} {...props} />;
+    <Container>
+      {keys.map((key) => {
+        const { number, letters } = key;
+        const props = { number, letters, onKeyClick: handleTyping };
+        return <Key key={number} {...props} />;
       })}
-    </>
+    </Container>
   );
 };
 
