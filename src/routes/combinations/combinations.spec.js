@@ -13,11 +13,10 @@ describe("GET / prediction", () => {
 
 const correctDataStructure = (res) => {
   const body = res.body;
-  const payload = res.body.payload;
+  const combinations = res.body.combinations;
+  const msg1 = "incorrect body data structure";
+  const msg2 = "combinations is not array";
 
-  const bodyErrorMessage = "incorrect body data structure";
-  const payloadErrorMessage = "payload is not array";
-
-  if (!typeof body === "object") throw new Error(bodyErrorMessage);
-  if (!Array.isArray(payload)) throw new Error(payloadErrorMessage);
+  if (!typeof body === "object") throw new Error(msg1);
+  if (!Array.isArray(combinations)) throw new Error(msg2);
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { numberLetterMapping } from "../../constants/numberLetterMapping";
-import { getCombinations } from "../../flux/actions/combinations";
+import { numberLetterMapping } from "../utils/constants";
+import { getCombinations } from "../flux/actions/combinations";
 import Key from "./Key";
 
 const Keypad = () => {

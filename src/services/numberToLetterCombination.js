@@ -10,11 +10,11 @@ const createLetterGroupArray = (number) => {
   return letterGroupArray;
 };
 
-const combine = (a, b) => {
+const combineLetterGroups = (a, b) => {
   const combinations = [];
 
   a.reduce((_, c) => {
-    b.map((d) => {
+    b.forEach((d) => {
       combinations.push(c + d);
     });
   }, "");
@@ -26,7 +26,7 @@ export const numberToLetterCombination = (number) => {
   if (!number || number === "") return [];
 
   const letterGroupArray = createLetterGroupArray(number);
-  const combinations = letterGroupArray.reduce(combine);
+  const combinations = letterGroupArray.reduce(combineLetterGroups);
 
   return combinations;
 };
