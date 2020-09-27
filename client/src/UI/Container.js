@@ -6,5 +6,5 @@ export const Container = styled.div`
   align-content: flex-start;
   margin: 20px;
   width: 300px;
-  max-height: 360px;
+  max-height: 350px;
 `;

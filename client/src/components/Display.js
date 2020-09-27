@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import { Container } from "../UI/Container";
 
 const DisplayContainer = styled(Container)`
@@ -15,7 +16,10 @@ const DisplayText = styled.div`
   height: 1rem;
 `;
 
-const Display = ({ combinations }) => {
+const Display = () => {
+  const { payload } = useSelector((state) => state.combinations);
+  const { combinations } = payload;
+
   return (
     <DisplayContainer>
       {combinations &&

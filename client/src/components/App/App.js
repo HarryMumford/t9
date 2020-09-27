@@ -1,8 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import styled from "styled-components";
-import Display from "./components/Display";
-import Keypad from "./components/Keypad";
+import Display from "../Display";
+import Keypad from "../Keypad";
 
 const AppContainer = styled.div`
   display: flex;
@@ -11,12 +10,10 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
-  const { payload } = useSelector((state) => state.combinations);
-
   return (
     <AppContainer>
       <Keypad />
-      <Display {...payload} />
+      <Display />
     </AppContainer>
   );
 };
