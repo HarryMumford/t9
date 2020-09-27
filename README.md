@@ -32,13 +32,13 @@ I followed TDD for implementing the algorithm on the back end. See my approach [
 ## Tests
 
 **Algorithm unit test example**
-![](./assets/unit.png)
+![](./assets/unit.PNG)
 
 **Component unit test example**
-![](./assets/component.png)
+![](./assets/component.PNG)
 
 **Api endpoint example**
-![](./assets/api.png)
+![](./assets/api.PNG)
 
 ## Getting Started
 
