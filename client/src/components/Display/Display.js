@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { Container } from "../UI/Container";
+import { Container } from "../../UI/Container";
 
 const DisplayContainer = styled(Container)`
   overflow-x: hidden;

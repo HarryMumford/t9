@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Display from "../Display";
+import Display from "../Display/Display";
 import Keypad from "../Keypad";
 
 const AppContainer = styled.div`
