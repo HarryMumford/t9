@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { numberLetterMapping } from "../utils/constants";
-import { getCombinations } from "../flux/actions/combinations";
-import Key from "./Key";
-import { Container } from "../UI/Container";
+import { numberLetterMapping } from "../../utils/constants";
+import { getCombinations } from "../../flux/actions/combinations";
+import Key from "../Key/Key";
+import { Container } from "../../UI/Container";
 
 const Keypad = () => {
   let [number, setNumber] = useState("");

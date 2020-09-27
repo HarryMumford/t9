@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
-import Keypad from "../Keypad";
+import Keypad from "../Keypad/Keypad";
 import Display from "../Display/Display";
 
 describe("App", () => {
