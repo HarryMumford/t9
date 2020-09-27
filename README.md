@@ -7,6 +7,7 @@
 Web app that allows users to input numbers on a keypad and returns predictive text.
 
 ## Live Website
+![](./assets/t9.gif)
 
 ## Approach
 
