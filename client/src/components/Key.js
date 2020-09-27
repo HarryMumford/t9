@@ -3,13 +3,19 @@ import styled from "styled-components";
 
 const Button = styled.div`
   border-radius: 50%;
+  cursor: pointer;
   background-color: gainsboro;
   display: flex;
   flex-direction: column;
   width: 80px;
   height: 80px;
   font-family: "Roboto", sans-serif;
-  margin: 5px 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  &:hover {
+    background-color: darkgray;
+  }
 `;
 
 const Text = styled.div`
