@@ -8,8 +8,6 @@ Web app that allows users to input numbers on a keypad and returns predictive te
 
 ## Live Website
 
-todo
-
 ## Approach
 
 I followed TDD for implementing the algorithm on the back end. See my approach here ...
@@ -28,18 +26,26 @@ I followed TDD for implementing the algorithm on the back end. See my approach h
 
 In terminal and desired file location:
 
-```
-git clone git@github.com:HarryMumford/T9.git
-cd T9
-npm i
-```
+1. Clone: `git clone git@github.com:HarryMumford/T9.git`
+2. Install dependencies from route directory and client folder (`npm i`)
 
 ## How to Run the app
 
-TBC
+3. Run server in backend: `npm run dev`
+4. Run react project in client folder: `npm start` (in a new terminal)
 
 ## How to Run the tests
 
-- Watch all tests `npm run test`
+- Watch all back end tests `npm t`
+- Watch all client tests `cd client && npm t`
 
 ## TODO
+
+- [x] Unit test / integration test components with enzyme and jest
+- [x] Api end point test using supertest
+- [x] Implement t9 combination algorithm using TDD
+- [x] Build apple-like phone UI
+- [x] Design a display UI
+- [ ] Host on Heroku
+- [ ] Implement Trie solution to filtering words based on prefixes
+- [ ] Write more integration tests simulating user clicks

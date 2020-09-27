@@ -1,7 +1,7 @@
 import { numberToLetterCombination } from "./numberToLetterCombination";
 
 describe("numberToLetter", () => {
-  it("returns [] when given empty string", () => {
+  it("returns empty array when given empty string", () => {
     const input = "";
     const assertion = numberToLetterCombination(input);
     const expectedResult = [];
@@ -12,13 +12,6 @@ describe("numberToLetter", () => {
     const input = "2";
     const assertion = numberToLetterCombination(input);
     const expectedResult = ["a", "b", "c"];
-    expect(assertion).toEqual(expectedResult);
-  });
-
-  it('returns ["0a", "0b", "0c"] when given "02"', () => {
-    const input = "02";
-    const assertion = numberToLetterCombination(input);
-    const expectedResult = ["0a", "0b", "0c"];
     expect(assertion).toEqual(expectedResult);
   });
 
@@ -42,10 +35,10 @@ describe("numberToLetter", () => {
     expect(assertion).toEqual(expectedResult);
   });
 
-  it("returns array with length 27 when given 222", () => {
-    const input = "222";
+  it("returns 108 combinations when given 2227", () => {
+    const input = "2227";
     const assertionLength = numberToLetterCombination(input).length;
-    const expectedResult = 27;
+    const expectedResult = 108;
     expect(assertionLength).toEqual(expectedResult);
   });
 });
