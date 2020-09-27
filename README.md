@@ -1,6 +1,6 @@
 # T9
 
-[Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [Continuous Integration and Delivery](#continuous-integration-and-delivery) | [TODO](#TODO)
+[Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [Continuous Integration and Delivery](#continuous-integration-and-delivery) | [TODO](#TODO)
 
 ## Description
 
@@ -11,7 +11,7 @@ Web app that allows users to input numbers on a keypad and returns predictive te
 
 ## Approach
 
-I followed TDD for implementing the algorithm on the back end. See my approach here ...
+I followed TDD for implementing the algorithm on the back end. See my approach [here](./predictive-text-approach.md)
 
 - API endpoint returns array of strings when given a numeral string
 - Logic is implemented in back end service
@@ -19,9 +19,26 @@ I followed TDD for implementing the algorithm on the back end. See my approach h
 
 ## Technologies Used
 
-- Main technologies:
+**Main technologies:**
 - Suggested: Node, React, redux
 - Additional: [Styled components](https://reactjs.org/): For its modular / component css that makes styling react components very easy.
+
+**Testing:**
+- Jest, Enzyme, Supertest
+
+**Linting**
+- Eslint, prettier
+
+## Tests
+
+**Algorithm unit test example**
+![](./assets/unit.png)
+
+**Component unit test example**
+![](./assets/component.png)
+
+**Api endpoint example**
+![](./assets/api.png)
 
 ## Getting Started
 
@@ -50,3 +67,4 @@ In terminal and desired file location:
 - [ ] Host on Heroku
 - [ ] Implement Trie solution to filtering words based on prefixes
 - [ ] Write more integration tests simulating user clicks
+- [ ] Test actions and reducers
