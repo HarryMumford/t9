@@ -6,12 +6,12 @@
 
 Web app that allows users to input numbers on a keypad and returns predictive text.
 
-## Live Website
+## Demo
 ![](./assets/t9.gif)
 
 ## Approach
 
-I followed TDD for implementing the algorithm on the back end. See my approach [here](./predictive-text-approach.md)
+I followed TDD for implementing the algorithm on the back end. See my approach [here](./predictive-text-approach.md).
 
 - API endpoint returns array of strings when given a numeral string
 - Logic is implemented in back end service
