@@ -1,6 +1,6 @@
 # T9
 
-[Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [TODO](#TODO)
+[Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [Todo](#Todo)
 
 ## Description
 
@@ -57,7 +57,7 @@ In terminal and desired file location:
 - Watch all back end tests `npm t`
 - Watch all client tests `cd client && npm t`
 
-## TODO
+## Todo
 
 - [x] Unit test / integration test components with enzyme and jest
 - [x] Api end point test using supertest
