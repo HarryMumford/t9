@@ -66,5 +66,5 @@ In terminal and desired file location:
 - [x] Design a display UI
 - [ ] Host on Heroku
 - [ ] Implement Trie solution to filtering words based on prefixes
-- [ ] Write more integration tests simulating user clicks
+- [x] Write more integration tests simulating user clicks
 - [ ] Test actions and reducers
