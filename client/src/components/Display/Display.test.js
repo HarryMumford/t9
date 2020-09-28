@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Display from "./Display";
 import * as redux from "react-redux";
+import Display from "./Display";
 
 const spy = jest.spyOn(redux, "useSelector");
 spy.mockReturnValue({ payload: { combinations: [] } });

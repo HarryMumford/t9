@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = styled.div`
+export const Button = styled.div`
   border-radius: 50%;
   cursor: pointer;
   background-color: gainsboro;

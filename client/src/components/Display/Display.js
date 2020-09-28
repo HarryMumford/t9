@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Container } from "../../UI/Container";
 
-const DisplayContainer = styled(Container)`
+export const DisplayContainer = styled(Container)`
   overflow-x: hidden;
   overflow-y: scroll;
 `;
 
-const DisplayText = styled.div`
+export const DisplayText = styled.div`
   color: dodgerblue;
   font-family: "Roboto", sans-serif;
   margin-right: 30px;
