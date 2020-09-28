@@ -21,7 +21,7 @@ I followed TDD for implementing the algorithm on the back end. See my approach [
 
 **Main technologies:**
 - Suggested: Node, React, redux
-- Additional: [Styled components](https://reactjs.org/): For its modular / component css that makes styling react components very easy.
+- Additional: [Styled components](https://reactjs.org/): for its modular / component css that makes styling react components very easy. [Babel](https://babeljs.io/): to compiles backend code allowing modern syntax to be used throughout the project and utilization of Javascript's latest features.
 
 **Testing:**
 - Jest, Enzyme, Supertest
