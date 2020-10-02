@@ -30,9 +30,10 @@ describe("Trie", () => {
       const input = "ace";
 
       trieInstance.insert(input);
-      const assertion = trieInstance.root.children[2].children[2].children[3];
-      const expectedResult = { words: ["ace"] };
-      expect(assertion).toMatchObject(expectedResult);
+      const endNode = trieInstance.root.children[2].children[2].children[3];
+
+      const expectedEndNode = { words: ["ace"] };
+      expect(endNode).toMatchObject(expectedEndNode);
     });
 
     it("creates 3 nodes and stores both T9onyms in same node", () => {
@@ -43,10 +44,14 @@ describe("Trie", () => {
       trieInstance.insert(input1);
       trieInstance.insert(input2);
 
-      const assertion = trieInstance.root.children[3].children[2].children[8];
-      const expectedResult = { words: ["fat", "eat"] };
+      const previousNode = trieInstance.root.children[3].children[2];
+      const endNode = trieInstance.root.children[3].children[2].children[8];
 
-      expect(assertion).toMatchObject(expectedResult);
+      const expectedEndNode = { words: ["fat", "eat"] };
+      const expectedPreviousNode = { children: {} };
+
+      expect(endNode).toMatchObject(expectedEndNode);
+      expect(previousNode).toMatchObject(expectedPreviousNode);
     });
   });
   describe(".getWordsAtNode", () => {

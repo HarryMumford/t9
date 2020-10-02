@@ -37,5 +37,15 @@ describe("Prediction", () => {
       expect(mockGetWordsAtNode).toHaveBeenCalledWith("328");
       expect(mockGetWordsAtNode).toHaveBeenCalledTimes(1);
     });
+
+    it("returns empty array when given undefined", () => {
+      const predictionInstance = new Predictor();
+      const input = undefined;
+
+      const assertion = predictionInstance.getAllPredictions(input);
+      const expectedResult = [];
+
+      expect(assertion).toEqual(expectedResult);
+    });
   });
 });

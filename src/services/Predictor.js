@@ -12,6 +12,7 @@ export default class Predictor {
   }
 
   getAllPredictions(keyString) {
+    if (!keyString) return [];
     return this.trie.getWordsAtNode(keyString);
   }
 }
