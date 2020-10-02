@@ -40,8 +40,6 @@ class Trie {
       currentNode = currentNode.children[nodeKey];
     });
 
-    console.log(currentNode);
-
     return currentNode.words;
   }
 }
