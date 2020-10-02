@@ -30,6 +30,20 @@ class Trie {
 
     currentNode.words.push(word);
   }
+
+  getWordsAtNode(keyString) {
+    let currentNode = this.root;
+
+    [...keyString].forEach((nodeKey) => {
+      if (!currentNode.children[nodeKey]) return [];
+
+      currentNode = currentNode.children[nodeKey];
+    });
+
+    console.log(currentNode);
+
+    return currentNode.words;
+  }
 }
 
 export default Trie;

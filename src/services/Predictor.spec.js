@@ -12,10 +12,10 @@ describe("Prediction", () => {
       const predictionInstance = new Predictor();
       const words = ["ace", "eat", "fat"];
 
-      predictionInstance.populateTrie(words);
-
       const mockTrieInstance = Trie.mock.instances[0];
       const mockInsert = mockTrieInstance.insert;
+
+      predictionInstance.populateTrie(words);
 
       expect(mockInsert).toHaveBeenCalledWith("ace");
       expect(mockInsert).toHaveBeenCalledWith("eat");
@@ -27,10 +27,15 @@ describe("Prediction", () => {
   describe(".getAllPredictions", () => {
     it("returns real word predictions given an numerical string", () => {
       const predictionInstance = new Predictor();
-      const input = "2";
-      const assertion = predictionInstance.getAllPredictions(input);
-      const expectedResult = "a";
-      expect(assertion).toBe(expectedResult);
+      const input = "328";
+
+      const mockTrieInstance = Trie.mock.instances[0];
+      const mockGetWordsAtNode = mockTrieInstance.getWordsAtNode;
+
+      predictionInstance.getAllPredictions(input);
+
+      expect(mockGetWordsAtNode).toHaveBeenCalledWith("328");
+      expect(mockGetWordsAtNode).toHaveBeenCalledTimes(1);
     });
   });
 });

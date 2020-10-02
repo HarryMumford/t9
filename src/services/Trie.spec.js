@@ -49,4 +49,20 @@ describe("Trie", () => {
       expect(assertion).toMatchObject(expectedResult);
     });
   });
+  describe(".getWordsAtNode", () => {
+    it("retrieves 'eat' and 'fat' (T9onyms) given 328", () => {
+      const trieInstance = new Trie();
+      const input = "328";
+
+      const word1 = "fat";
+      const word2 = "eat";
+
+      trieInstance.insert(word1);
+      trieInstance.insert(word2);
+
+      const assertion = trieInstance.getWordsAtNode(input);
+      const expectedResult = ["fat", "eat"];
+      expect(assertion).toMatchObject(expectedResult);
+    });
+  });
 });
