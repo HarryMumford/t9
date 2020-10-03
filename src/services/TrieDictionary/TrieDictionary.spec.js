@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe("TrieDictionary", () => {
   describe(".populateTrie", () => {
-    it("calls the insert method on the Trie class 5 times given an array of 5 words", () => {
+    it("calls the insert method on the Trie class 3 times given an array of 3 words", () => {
       const predictionInstance = new TrieDictionary();
       const words = ["ace", "eat", "fat"];
 
@@ -21,6 +21,17 @@ describe("TrieDictionary", () => {
       expect(mockInsert).toHaveBeenCalledWith("eat");
       expect(mockInsert).toHaveBeenCalledWith("fat");
       expect(mockInsert).toHaveBeenCalledTimes(3);
+    });
+
+    it("calls the parseDictionary", () => {
+      const predictionInstance = new TrieDictionary();
+      const words = ["ace", "eat", "fat"];
+
+      const mockParseFunction = jest.fn(() => words);
+
+      predictionInstance.populateTrie(undefined, mockParseFunction);
+
+      expect(mockParseFunction).toHaveBeenCalledTimes(1);
     });
   });
 
