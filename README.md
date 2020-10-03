@@ -6,27 +6,7 @@
 
 Web app that allows users to input numbers on a keypad and returns predictive text.
 
-This challenge was given to me as a tech test with the following description:
-
-```
-Implement a number to word list converter as a Node backend and React/Redux frontend.
-
-If you're not familiar with some of the languages or frameworks then feel free to adapt as you see fit to what you have more experience with. We're more interested in seeing your general approach rather than specific experience with the tech.
-
-The backend should provide a rest endpoint that converts a given numeric string into a list of corresponding words in the style of T9 [https://en.wikipedia.org/wiki/T9_(predictive_text)] or Phonewords [https://en.wikipedia.org/wiki/Phoneword]. For example, given the input 23 the output should be: ad, ae, af, bd, be, bf, cd, ce, cf
-
-(This is not an API spec, please use your judgement on what a good request or response format is)
-
-The frontend should allow the user to enter a number, query the backend for the corresponding expansions, and display them.
-
-We'd like you to set a deadline for your work, communicate it to us, and proceed to complete a solution that showcases your skills. The solution should be shared with us in a git repository with real history included. We're interested in seeing high quality, readable code.
-
-If you have the time, ways to go beyond the minimal solution could include for example:
-
-phone keyboard -like UI
-great project setup
-filtering to include only real words based on a suitable word list
-```
+This challenge was given to me as a tech test with this [description](./docs/task.md):
 
 ## Demo
 
@@ -36,7 +16,7 @@ filtering to include only real words based on a suitable word list
 
 **Basic functionality**
 
-The basic requirement for this test was to create an algorithm that returns the combinations of letters given a keyString i.e. `'23' => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]'. I followed TDD for implementing this algorithm on the back end. See my initial approach [here](./predictive-text-approach.md). The problem with this is for a 7 digit key string it will need to calculate over 2000 combinations. If you combine this with dictionary filtering then you will have a very slow performing app.
+The basic requirement for this test was to create an algorithm that returns the combinations of letters given a keyString i.e. `'23' => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]'. I followed TDD for implementing this algorithm on the back end. See my initial approach [here](./docs/predictive-text-approach.md). The problem with this is for a 7 digit key string it will need to calculate over 2000 combinations. If you combine this with dictionary filtering then you will have a very slow performing app.
 
 **Advanced functionality - T9 Trie**
 
@@ -110,5 +90,5 @@ In terminal and desired file location:
 - [x] Write more integration tests simulating user clicks
 - [ ] Test actions and reducers
 - [ ] Use frequency of use to order the predictions
-- [ ] (front end) Add delete button / reset button
-- [ ] (front end) Add key press options
+- [ ] (Front end) Add delete button / reset button
+- [ ] (Front end) Add key press options
