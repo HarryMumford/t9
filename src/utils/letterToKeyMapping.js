@@ -1,4 +1,4 @@
-export const letterToKeyMapping = {
+const letterToKeyMapping = {
   a: 2,
   b: 2,
   c: 2,
@@ -26,3 +26,5 @@ export const letterToKeyMapping = {
   y: 9,
   z: 9,
 };
+
+export default letterToKeyMapping;

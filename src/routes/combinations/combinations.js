@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { numberToLetterCombination } from "../../services/combinations/numberToLetterCombination";
+import numberToLetterCombination from "../../services/combinations/numberToLetterCombination";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const number = req.query.number;
+    const { number } = req.query;
     const combinations = await numberToLetterCombination(number);
     res.json({ combinations });
   } catch (e) {

@@ -1,4 +1,4 @@
-import { numberToLetterCombination } from "./numberToLetterCombination";
+import numberToLetterCombination from "./numberToLetterCombination";
 
 describe("numberToLetter", () => {
   it("returns empty array when given empty string", () => {

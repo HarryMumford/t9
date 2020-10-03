@@ -1,4 +1,4 @@
-import { numberLetterMapping } from "../../utils/numberLetterMapping";
+import numberLetterMapping from "../../utils/numberLetterMapping";
 
 const createLetterGroupArray = (number) => {
   const letterGroupArray = [];
@@ -14,15 +14,15 @@ const combineLetterGroups = (a, b) => {
   const combinations = [];
 
   a.reduce((_, c) => {
-    b.forEach((d) => {
-      combinations.push(c + d);
+    return b.forEach((d) => {
+      return combinations.push(c + d);
     });
   }, "");
 
   return combinations;
 };
 
-export const numberToLetterCombination = (number) => {
+const numberToLetterCombination = (number) => {
   if (!number || number === "") return [];
 
   const letterGroupArray = createLetterGroupArray(number);
@@ -30,3 +30,5 @@ export const numberToLetterCombination = (number) => {
 
   return combinations;
 };
+
+export default numberToLetterCombination;

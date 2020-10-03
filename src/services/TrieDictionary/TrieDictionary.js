@@ -1,5 +1,5 @@
-import Trie from "../Trie/Trie";
 import fs from "fs";
+import Trie from "../Trie/Trie";
 
 export default class TrieDictionary {
   constructor(textFilePath) {

@@ -1,4 +1,4 @@
-export const numberLetterMapping = [
+const numberLetterMapping = [
   ["0"],
   ["1"],
   ["a", "b", "c"],
@@ -10,3 +10,5 @@ export const numberLetterMapping = [
   ["t", "u", "v"],
   ["w", "x", "y", "z"],
 ];
+
+export default numberLetterMapping;

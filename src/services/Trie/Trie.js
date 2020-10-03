@@ -1,4 +1,4 @@
-import { letterToKeyMapping } from "../../utils/letterToKeyMapping";
+import letterToKeyMapping from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {
@@ -40,6 +40,8 @@ class Trie {
       if (!currentNode.children[nodeKey]) return [];
 
       currentNode = currentNode.children[nodeKey];
+
+      return currentNode;
     });
 
     return currentNode.words;
