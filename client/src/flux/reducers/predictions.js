@@ -1,7 +1,7 @@
 import {
-  COMBINATIONS_FAIL,
-  COMBINATIONS_LOADING,
-  COMBINATIONS_SUCCESS,
+  PREDICTIONS_FAIL,
+  PREDICTIONS_LOADING,
+  PREDICTIONS_SUCCESS,
 } from "../actions/types";
 
 const defaultState = {
@@ -9,18 +9,18 @@ const defaultState = {
   payload: {},
 };
 
-const combinations = (state = defaultState, action) => {
+const predictions = (state = defaultState, action) => {
   switch (action.type) {
-    case COMBINATIONS_FAIL:
+    case PREDICTIONS_FAIL:
       return {
         ...state,
       };
-    case COMBINATIONS_LOADING:
+    case PREDICTIONS_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case COMBINATIONS_SUCCESS:
+    case PREDICTIONS_SUCCESS:
       return {
         ...state,
         payload: action.payload,
@@ -30,4 +30,4 @@ const combinations = (state = defaultState, action) => {
   }
 };
 
-export default combinations;
+export default predictions;
