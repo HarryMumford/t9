@@ -8,7 +8,7 @@ Web app that allows users to input numbers on a keypad and returns predictive te
 
 ## Demo
 
-![](./assets/t9.gif)
+![](./assets/demo.gif)
 
 ## Approach
 
@@ -75,6 +75,8 @@ In terminal and desired file location:
 - [x] Build apple-like phone UI
 - [x] Design a display UI
 - [ ] Host on Heroku
-- [ ] Implement Trie solution to filtering words based on prefixes
+- [x] Implement Trie solution to filtering words based on prefixes
+- [x] Create a dictionary reader and import txt file
 - [x] Write more integration tests simulating user clicks
 - [ ] Test actions and reducers
+- [ ] Use frequency of use to order the predicitons
