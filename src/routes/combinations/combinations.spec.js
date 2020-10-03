@@ -1,5 +1,12 @@
-import app from "../../app";
 import request from "supertest";
+import app from "../../app";
+
+const correctDataStructure = (res) => {
+  const { combinations } = res.body;
+  const msg2 = "combinations is not array";
+
+  if (!Array.isArray(combinations)) throw new Error(msg2);
+};
 
 describe("GET / prediction", () => {
   it("responds with status 200", async () => {
@@ -10,13 +17,3 @@ describe("GET / prediction", () => {
     await request(app).get("/combinations").expect(correctDataStructure);
   });
 });
-
-const correctDataStructure = (res) => {
-  const body = res.body;
-  const combinations = res.body.combinations;
-  const msg1 = "incorrect body data structure";
-  const msg2 = "combinations is not array";
-
-  if (!typeof body === "object") throw new Error(msg1);
-  if (!Array.isArray(combinations)) throw new Error(msg2);
-};

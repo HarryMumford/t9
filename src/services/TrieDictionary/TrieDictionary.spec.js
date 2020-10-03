@@ -1,5 +1,6 @@
 import TrieDictionary from "./TrieDictionary";
 import Trie from "../Trie/Trie";
+
 jest.mock("../Trie/Trie");
 
 beforeEach(() => {

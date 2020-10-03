@@ -1,6 +1,6 @@
 # T9
 
-[Description](#description) | [Demo](#demo) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [TODO](#TODO)
+[Description](#description) | [Demo](#demo) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [Todo](#todo)
 
 ## Description
 
@@ -47,7 +47,7 @@ Additional:
 
 **Linting**
 
-- Eslint, prettier
+- Eslint, prettier with Airbnb style plugin
 
 ## Tests
 
@@ -76,8 +76,10 @@ In terminal and desired file location:
 
 - Watch all back end tests `npm t`
 - Watch all client tests `cd client && npm t`
+- run lint `npm run lint`
+- run lint and fix `npm run lint:fix`
 
-## TODO
+## Todo
 
 - [x] Unit test / integration test components with enzyme and jest
 - [x] Api end point test using supertest
@@ -90,5 +92,6 @@ In terminal and desired file location:
 - [x] Write more integration tests simulating user clicks
 - [ ] Test actions and reducers
 - [ ] Use frequency of use to order the predictions
+- [ ] Use a deep suggestions to find predictions higher in the trie
 - [ ] (Front end) Add delete button / reset button
 - [ ] (Front end) Add key press options

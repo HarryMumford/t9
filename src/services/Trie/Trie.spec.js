@@ -2,6 +2,32 @@ import Trie from "./Trie";
 
 describe("Trie", () => {
   describe(".insert", () => {
+    it("throws error when given empty string", () => {
+      const trieInstance = new Trie();
+      const input = "";
+
+      const assert = () => {
+        trieInstance.insert(input);
+      };
+
+      expect(() => {
+        assert();
+      }).toThrow();
+    });
+
+    it("throws error when given non [a-z] values", () => {
+      const trieInstance = new Trie();
+      const input = "R";
+
+      const assert = () => {
+        trieInstance.insert(input);
+      };
+
+      expect(() => {
+        assert();
+      }).toThrow();
+    });
+
     it("creates 1 node and stores the given word, 'a'", () => {
       const trieInstance = new Trie();
       const input = "a";

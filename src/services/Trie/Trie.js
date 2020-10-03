@@ -1,4 +1,4 @@
-import { letterToKeyMapping } from "../../utils/letterToKeyMapping";
+import letterToKeyMapping from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {
@@ -6,14 +6,14 @@ class Trie {
   }
 
   insert(word) {
-    if (word.length === 0) return;
+    if (word.length === 0) throw new Error("Word length cannot be zero");
 
     let currentNode = this.root;
 
     [...word].forEach((letter) => {
       const digit = letterToKeyMapping[letter];
 
-      if (!digit) return;
+      if (!digit) throw new Error("Not a valid digit");
 
       if (!currentNode.children) {
         currentNode.children = {};
@@ -40,6 +40,8 @@ class Trie {
       if (!currentNode.children[nodeKey]) return [];
 
       currentNode = currentNode.children[nodeKey];
+
+      return currentNode;
     });
 
     return currentNode.words;
