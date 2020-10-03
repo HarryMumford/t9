@@ -17,13 +17,13 @@ export const DisplayText = styled.div`
 `;
 
 const Display = () => {
-  const { payload } = useSelector((state) => state.combinations);
-  const { combinations } = payload;
+  const { payload } = useSelector((state) => state.predictions);
+  const { predictions } = payload;
 
   return (
     <DisplayContainer>
-      {combinations &&
-        combinations.map((c, index) => {
+      {predictions &&
+        predictions.map((c, index) => {
           return <DisplayText key={index}>{c}</DisplayText>;
         })}
     </DisplayContainer>

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import combinations from "./combinations";
+import predictions from "./predictions";
 
-const rootReducer = combineReducers({ combinations });
+const rootReducer = combineReducers({ predictions });
 
 export default rootReducer;
