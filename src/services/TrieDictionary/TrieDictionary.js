@@ -1,5 +1,6 @@
 import { parseDictionary } from "../../utils/dictionary/parseDictionary";
 import Trie from "../Trie/Trie";
+import fs from "fs";
 
 export default class TrieDictionary {
   constructor(textFilePath) {
@@ -7,12 +8,21 @@ export default class TrieDictionary {
     this.textFilePath = textFilePath;
   }
 
-  populateTrie(words, parseFunction = parseDictionary) {
-    const wordArray = words || parseFunction(this.textFilePath);
+  populateTrie(words) {
+    const wordArray = words || this.parseDictionary();
 
     wordArray.forEach((word) => {
       this.trie.insert(word);
     });
+  }
+
+  parseDictionary() {
+    const data = fs.readFileSync(this.textFilePath, {
+      encoding: "utf8",
+    });
+    const array = data.toString().split("\n");
+
+    return array;
   }
 
   getAllPredictions(keyString) {
