@@ -4,14 +4,13 @@ import Predictor from "../../services/Predictor";
 
 const router = Router();
 
+const predictorInstance = new Predictor();
+const array = parseDictionary();
+predictorInstance.populateTrie(array);
+
 router.post("/", async (req, res) => {
   try {
     const keyString = req.body.keyString;
-    const array = parseDictionary();
-    const predictorInstance = new Predictor();
-
-    predictorInstance.populateTrie(array);
-
     const predictions = await predictorInstance.getAllPredictions(keyString);
 
     res.json({ predictions });
