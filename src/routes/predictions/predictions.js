@@ -1,12 +1,10 @@
 import { Router } from "express";
-import { parseDictionary } from "../../utils/dictionary/parseDictionary";
 import TrieDictionary from "../../services/TrieDictionary/TrieDictionary";
 
 const router = Router();
-
-const trieDictionaryInstance = new TrieDictionary();
-const array = parseDictionary();
-trieDictionaryInstance.populateTrie(array);
+const dictionaryFilePath = "src/utils/dictionary/words_alpha.txt";
+const trieDictionaryInstance = new TrieDictionary(dictionaryFilePath);
+trieDictionaryInstance.populateTrie();
 
 router.post("/", async (req, res) => {
   try {

@@ -1,4 +1,3 @@
-import { parseDictionary } from "../../utils/dictionary/parseDictionary";
 import Trie from "../Trie/Trie";
 import fs from "fs";
 
@@ -17,10 +16,13 @@ export default class TrieDictionary {
   }
 
   parseDictionary() {
-    const data = fs.readFileSync(this.textFilePath, {
+    const filePath = this.textFilePath;
+    const encoding = {
       encoding: "utf8",
-    });
-    const array = data.toString().split("\n");
+    };
+    const data = fs.readFileSync(filePath, encoding);
+    const regex = /\r?\n/;
+    const array = data.toString().split(regex);
 
     return array;
   }

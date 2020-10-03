@@ -13,6 +13,8 @@ class Trie {
     [...word].forEach((letter) => {
       const digit = letterToKeyMapping[letter];
 
+      if (!digit) return;
+
       if (!currentNode.children) {
         currentNode.children = {};
       }
