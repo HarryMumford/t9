@@ -1,3 +1,5 @@
+**This is the original solution**
+
 # T9
 
 [Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [TODO](#TODO)
@@ -7,6 +9,7 @@
 Web app that allows users to input numbers on a keypad and returns predictive text.
 
 ## Demo
+
 ![](./assets/t9.gif)
 
 ## Approach
@@ -20,13 +23,16 @@ I followed TDD for implementing the algorithm on the back end. See my approach [
 ## Technologies Used
 
 **Main technologies:**
+
 - Suggested: Node, React, redux
 - Additional: [Styled components](https://reactjs.org/): for its modular / component css that makes styling react components very easy. [Babel](https://babeljs.io/): to compiles backend code allowing modern syntax to be used throughout the project and utilization of Javascript's latest features.
 
 **Testing:**
+
 - Jest, Enzyme, Supertest
 
 **Linting**
+
 - Eslint, prettier
 
 ## Tests
