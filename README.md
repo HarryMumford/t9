@@ -1,32 +1,42 @@
 # T9
 
-[Description](#description) | [Live Website](#live-website) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [TODO](#TODO)
+[Description](#description) | [Demo](#demo) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [TODO](#TODO)
 
 ## Description
 
 Web app that allows users to input numbers on a keypad and returns predictive text.
 
 ## Demo
+
 ![](./assets/t9.gif)
 
 ## Approach
 
-I followed TDD for implementing the algorithm on the back end. See my approach [here](./predictive-text-approach.md).
+**Basic functionality**
 
-- API endpoint returns array of strings when given a numeral string
-- Logic is implemented in back end service
-- MVP consists of an input numbers and list of predictions on the front end and 1 api endpoint on the backend
+The basic requirement for this test was to create an algorithm that returns the combinations of letters given a keyString i.e. `'23' => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]'. I followed TDD for implementing this algorithm on the back end. See my initial approach [here](./predictive-text-approach.md). The problem with this is for a 7 digit key string it will need to calculate over 2000 combinations. If you combine this with dictionary filtering then you will have a very slow performing app.
+
+**Advanced functionality - T9 Trie**
+
+To solve the slow combination generating problem, and to implement a real word filter I decided to use a Trie. See my approach [here](./real-word-predictions.md). The Trie uses T9 keys as nodes:
+
+![](./assets/trie.PNG)
+
+The above diagram shows how two T9onyms (words that share the same key string) are stored in a Trie.
 
 ## Technologies Used
 
 **Main technologies:**
+
 - Suggested: Node, React, redux
 - Additional: [Styled components](https://reactjs.org/): for its modular / component css that makes styling react components very easy. [Babel](https://babeljs.io/): to compiles backend code allowing modern syntax to be used throughout the project and utilization of Javascript's latest features.
 
 **Testing:**
+
 - Jest, Enzyme, Supertest
 
 **Linting**
+
 - Eslint, prettier
 
 ## Tests
