@@ -1,15 +1,15 @@
-import Predictor from "./Predictor";
-import Trie from "./Trie";
-jest.mock("./Trie");
+import TrieDictionary from "./TrieDictionary";
+import Trie from "../Trie/Trie";
+jest.mock("../Trie/Trie");
 
 beforeEach(() => {
   Trie.mockClear();
 });
 
-describe("Prediction", () => {
+describe("TrieDictionary", () => {
   describe(".populateTrie", () => {
     it("calls the insert method on the Trie class 5 times given an array of 5 words", () => {
-      const predictionInstance = new Predictor();
+      const predictionInstance = new TrieDictionary();
       const words = ["ace", "eat", "fat"];
 
       const mockTrieInstance = Trie.mock.instances[0];
@@ -26,7 +26,7 @@ describe("Prediction", () => {
 
   describe(".getAllPredictions", () => {
     it("returns real word predictions given an numerical string", () => {
-      const predictionInstance = new Predictor();
+      const predictionInstance = new TrieDictionary();
       const input = "328";
 
       const mockTrieInstance = Trie.mock.instances[0];
@@ -39,7 +39,7 @@ describe("Prediction", () => {
     });
 
     it("returns empty array when given undefined", () => {
-      const predictionInstance = new Predictor();
+      const predictionInstance = new TrieDictionary();
       const input = undefined;
 
       const assertion = predictionInstance.getAllPredictions(input);

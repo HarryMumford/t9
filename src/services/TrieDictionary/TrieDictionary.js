@@ -1,6 +1,6 @@
-import Trie from "./Trie";
+import Trie from "../Trie/Trie";
 
-export default class Predictor {
+export default class TrieDictionary {
   constructor() {
     this.trie = new Trie();
   }

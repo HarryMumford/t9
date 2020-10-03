@@ -1,17 +1,19 @@
 import { Router } from "express";
 import { parseDictionary } from "../../utils/dictionary/parseDictionary";
-import Predictor from "../../services/Predictor";
+import TrieDictionary from "../../services/TrieDictionary/TrieDictionary";
 
 const router = Router();
 
-const predictorInstance = new Predictor();
+const trieDictionaryInstance = new TrieDictionary();
 const array = parseDictionary();
-predictorInstance.populateTrie(array);
+trieDictionaryInstance.populateTrie(array);
 
 router.post("/", async (req, res) => {
   try {
     const keyString = req.body.keyString;
-    const predictions = await predictorInstance.getAllPredictions(keyString);
+    const predictions = await trieDictionaryInstance.getAllPredictions(
+      keyString
+    );
 
     res.json({ predictions });
   } catch (e) {

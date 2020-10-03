@@ -1,4 +1,4 @@
-import { letterToKeyMapping } from "../utils/letterToKeyMapping";
+import { letterToKeyMapping } from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {

@@ -1,4 +1,4 @@
-import { numberLetterMapping } from "../utils/numberLetterMapping";
+import { numberLetterMapping } from "../../utils/numberLetterMapping";
 
 const createLetterGroupArray = (number) => {
   const letterGroupArray = [];

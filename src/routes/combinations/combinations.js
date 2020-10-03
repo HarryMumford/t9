@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { numberToLetterCombination } from "../../services/numberToLetterCombination";
+import { numberToLetterCombination } from "../../services/combinations/numberToLetterCombination";
 
 const router = Router();
 
