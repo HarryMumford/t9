@@ -37,14 +37,12 @@ class Trie {
     let currentNode = this.root;
 
     [...keyString].forEach((nodeKey) => {
-      if (!currentNode.children[nodeKey]) return [];
+      if (!currentNode.children[nodeKey]) return;
 
       currentNode = currentNode.children[nodeKey];
-
-      return currentNode;
     });
 
-    return currentNode.words;
+    return currentNode.words || [];
   }
 }
 

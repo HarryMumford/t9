@@ -1,5 +1,10 @@
 # T9
 
+![](./assets/badge-branches.svg)
+![](./assets/badge-functions.svg)
+![](./assets/badge-lines.svg)
+![](./assets/badge-statements.svg)
+
 [Description](#description) | [Demo](#demo) | [Approach](#approach) | [Technologies Used](#technologies-used) | [Tests](#tests) | [Getting Started](#getting-started) | [How to Run the App](#how-to-run-the-app) | [How to Run the tests](#how-to-run-the-tests) | [Todo](#todo)
 
 ## Description

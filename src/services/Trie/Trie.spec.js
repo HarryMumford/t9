@@ -80,6 +80,7 @@ describe("Trie", () => {
       expect(previousNode).toMatchObject(expectedPreviousNode);
     });
   });
+
   describe(".getWordsAtNode", () => {
     it("retrieves 'eat' and 'fat' (T9onyms) given 328", () => {
       const trieInstance = new Trie();
@@ -94,6 +95,22 @@ describe("Trie", () => {
       const assertion = trieInstance.getWordsAtNode(input);
       const expectedResult = ["fat", "eat"];
       expect(assertion).toMatchObject(expectedResult);
+    });
+    it("returns empty array if no words at node or node does not exist", () => {
+      const trieInstance = new Trie();
+      const input1 = "2";
+      const input2 = "3";
+
+      const word = "fat";
+
+      trieInstance.insert(word);
+
+      const nonExistentNode = trieInstance.getWordsAtNode(input1);
+      const noWordNode = trieInstance.getWordsAtNode(input2);
+      const expectedResult = [];
+
+      expect(nonExistentNode).toEqual(expectedResult);
+      expect(noWordNode).toEqual(expectedResult);
     });
   });
 });
