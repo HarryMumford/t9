@@ -10,8 +10,13 @@ class Trie {
 
     let currentNode = this.root;
 
-    [...word].forEach((letter) => {
+    [...word].forEach((letter, index) => {
       const digit = letterToKeyMapping[letter];
+      let isLastNode = false;
+
+      if (word.length === index + 1) {
+        isLastNode = true;
+      }
 
       if (!digit) throw new Error("Not a valid digit");
 
@@ -24,13 +29,21 @@ class Trie {
       }
 
       currentNode = currentNode.children[digit];
+
+      if (!currentNode.deepSuggestions) {
+        currentNode.deepSuggestions = [];
+      }
+
+      if (!isLastNode) {
+        currentNode.deepSuggestions.push(word);
+      }
     });
 
-    if (!currentNode.words) {
-      currentNode.words = [];
+    if (!currentNode.currentSuggestions) {
+      currentNode.currentSuggestions = [];
     }
 
-    currentNode.words.push(word);
+    currentNode.currentSuggestions.push(word);
   }
 
   getWordsAtNode(keyString) {
@@ -42,7 +55,7 @@ class Trie {
       currentNode = currentNode.children[nodeKey];
     });
 
-    return currentNode.words || [];
+    return currentNode.currentSuggestions || [];
   }
 }
 

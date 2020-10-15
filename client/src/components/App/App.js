@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Display from "../Display/Display";
-import Keypad from "../Keypad/Keypad";
+import React from 'react';
+import styled from 'styled-components';
+import Display from '../Display/Display';
+import Keypad from '../Keypad/Keypad';
 
 const AppContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const AppContainer = styled.div`
   margin-top: 15vh;
 `;
 
-const App = () => {
+const app = () => {
   return (
     <AppContainer>
       <Keypad />
@@ -18,4 +18,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default app;
