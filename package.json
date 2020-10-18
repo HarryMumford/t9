@@ -11,7 +11,7 @@
     "test:coverage": "jest ./src --coverage --coverageReporters='json-summary'",
     "test:badges": "npm run test:coverage  && jest-coverage-badges input './coverage/coverage-summary.json' output './assets'",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "npm run lint --fix"
   },
   "keywords": [],
   "author": "",
@@ -30,15 +30,11 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
     "@babel/runtime": "^7.11.2",
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "^18.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.3",
-    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-jest": "^24.1.0",
     "jest": "^26.4.2",
     "jest-coverage-badges": "^1.1.2",
     "nodemon": "^2.0.4",
@@ -47,7 +43,7 @@
   },
   "jest": {
     "testPathIgnorePatterns": [
-      "client"
+      "./client/"
     ]
   },
   "coverageReporters": [

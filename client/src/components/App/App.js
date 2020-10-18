@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Display from '../Display/Display';
-import Keypad from '../Keypad/Keypad';
+import React from "react";
+import styled from "styled-components";
+import Display from "../Display/Display";
+import Keypad from "../Keypad/Keypad";
 
 const AppContainer = styled.div`
   display: flex;

@@ -1,19 +1,18 @@
 import request from "supertest";
 import app from "../../app";
 
-const correctDataStructure = (res) => {
-  const { combinations } = res.body;
-  const msg2 = "combinations is not array";
-
-  if (!Array.isArray(combinations)) throw new Error(msg2);
-};
-
-describe("GET / prediction", () => {
+describe("GET / combinations", () => {
   it("responds with status 200", async () => {
-    await request(app).get("/combinations").expect(200);
+    const result = await request(app).get("/combinations");
+
+    expect(result.status).toEqual(200);
   });
 
   it("responds with correct data", async () => {
-    await request(app).get("/combinations").expect(correctDataStructure);
+    const result = await request(app).get("/combinations");
+
+    const expectedData = { combinations: [] };
+
+    expect(result.body).toEqual(expectedData);
   });
 });

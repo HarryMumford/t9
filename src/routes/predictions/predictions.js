@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
   try {
     const { keyString } = req.body;
     const predictions = await trieDictionaryInstance.getAllPredictions(
-      keyString
+      keyString,
     );
 
     res.json({ predictions });

@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Keypad from "./Keypad";
-import Key, { Button } from "../Key/Key";
+import Key from "../Key/Key";
 import * as redux from "react-redux";
 
-let spy, dispatch;
+let spy;
 
 beforeEach(() => {
   spy = jest.spyOn(redux, "useDispatch");
