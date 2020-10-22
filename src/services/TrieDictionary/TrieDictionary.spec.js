@@ -58,7 +58,7 @@ describe("TrieDictionary", () => {
       const input = "328";
 
       const mockTrieInstance = Trie.mock.instances[0];
-      const mockGetWordsAtNode = mockTrieInstance.getWordsAtNode;
+      const mockGetWordsAtNode = mockTrieInstance.getPredictionsAtNode;
 
       trieDictionaryInstance.getAllPredictions(input);
 

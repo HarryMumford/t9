@@ -12,6 +12,7 @@ class Trie {
 
     [...word].forEach((letter, index) => {
       const digit = letterToKeyMapping[letter];
+      const nodeStructure = { predictions: {} };
       let isLastNode = false;
 
       if (word.length === index + 1) {
@@ -25,28 +26,28 @@ class Trie {
       }
 
       if (!currentNode.children[digit]) {
-        currentNode.children[digit] = {};
+        currentNode.children[digit] = nodeStructure;
       }
 
       currentNode = currentNode.children[digit];
 
-      if (!currentNode.deepSuggestions) {
-        currentNode.deepSuggestions = [];
+      if (!currentNode.predictions.deep) {
+        currentNode.predictions.deep = [];
       }
 
       if (!isLastNode) {
-        currentNode.deepSuggestions.push(word);
+        currentNode.predictions.deep.push(word);
       }
     });
 
-    if (!currentNode.currentSuggestions) {
-      currentNode.currentSuggestions = [];
+    if (!currentNode.predictions.current) {
+      currentNode.predictions.current = [];
     }
 
-    currentNode.currentSuggestions.push(word);
+    currentNode.predictions.current.push(word);
   }
 
-  getWordsAtNode(keyString) {
+  getPredictionsAtNode(keyString) {
     let currentNode = this.root;
 
     [...keyString].forEach((nodeKey) => {
@@ -55,7 +56,7 @@ class Trie {
       currentNode = currentNode.children[nodeKey];
     });
 
-    return currentNode.currentSuggestions || [];
+    return currentNode.predictions || [];
   }
 }
 

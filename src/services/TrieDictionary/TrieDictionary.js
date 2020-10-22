@@ -29,6 +29,6 @@ export default class TrieDictionary {
 
   getAllPredictions(keyString) {
     if (!keyString) return [];
-    return this.trie.getWordsAtNode(keyString);
+    return this.trie.getPredictionsAtNode(keyString);
   }
 }
