@@ -128,16 +128,17 @@ describe("Trie", () => {
       expect(current).toEqual(expectedCurrentPredictions);
       expect(deep).toEqual(expectedDeepPredictions);
     });
-    it("returns empty array if node does not exist", () => {
+
+    it("returns empty predictions if node does not exist", () => {
       const trieInstance = new Trie();
-      const input = "2";
+      const input = "32822";
 
       const word = "fat";
 
       trieInstance.insert(word);
 
       const nonExistentNode = trieInstance.getPredictionsAtNode(input);
-      const expectedResult = [];
+      const expectedResult = { current: [], deep: [] };
 
       expect(nonExistentNode).toEqual(expectedResult);
     });

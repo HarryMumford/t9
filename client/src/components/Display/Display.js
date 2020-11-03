@@ -23,8 +23,8 @@ const Display = () => {
   return (
     <DisplayContainer>
       {predictions &&
-        predictions.map((c, index) => {
-          return <DisplayText key={index}>{c}</DisplayText>;
+        predictions.current.map((currentPredictions, index) => {
+          return <DisplayText key={index}>{currentPredictions}</DisplayText>;
         })}
     </DisplayContainer>
   );

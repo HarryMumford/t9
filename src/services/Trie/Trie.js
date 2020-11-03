@@ -2,7 +2,9 @@ import letterToKeyMapping from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {
-    this.root = {};
+    this.root = {
+      predictions: { current: [], deep: [] },
+    };
   }
 
   insert(word) {
@@ -48,15 +50,21 @@ class Trie {
   }
 
   getPredictionsAtNode(keyString) {
+    const defaultState = { current: [], deep: [] };
     let currentNode = this.root;
+    let predictions;
 
     [...keyString].forEach((nodeKey) => {
-      if (!currentNode.children[nodeKey]) return;
+      if (!currentNode.children || !currentNode.children[nodeKey]) {
+        predictions = defaultState;
+        return;
+      }
 
       currentNode = currentNode.children[nodeKey];
+      predictions = currentNode.predictions;
     });
 
-    return currentNode.predictions || [];
+    return predictions;
   }
 }
 

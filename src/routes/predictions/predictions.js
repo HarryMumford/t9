@@ -2,7 +2,8 @@ import { Router } from "express";
 import TrieDictionary from "../../services/TrieDictionary/TrieDictionary";
 
 const router = Router();
-const dictionaryFilePath = "src/utils/dictionary/plain-eng-400-000.txt";
+const dictionaryFilePath =
+  "src/utils/dictionary/top-10000-most-frequent-words.txt";
 const trieDictionaryInstance = new TrieDictionary(dictionaryFilePath);
 trieDictionaryInstance.populateTrie();
 
