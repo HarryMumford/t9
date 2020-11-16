@@ -15,6 +15,8 @@ export const getPredictions = (userInput) => async (dispatch) => {
 
     const res = await axios.post("/predictions", body);
 
+    console.log(res.data);
+
     dispatch({
       type: PREDICTIONS_SUCCESS,
       payload: res.data,

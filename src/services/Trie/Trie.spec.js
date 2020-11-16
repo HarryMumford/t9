@@ -140,6 +140,8 @@ describe("Trie", () => {
       const nonExistentNode = trieInstance.getPredictionsAtNode(input);
       const expectedResult = { current: [], deep: [] };
 
+      console.log(nonExistentNode);
+
       expect(nonExistentNode).toEqual(expectedResult);
     });
   });
