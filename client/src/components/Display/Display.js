@@ -9,7 +9,7 @@ export const DisplayContainer = styled(Container)`
 `;
 
 export const DisplayText = styled.div`
-  color: dodgerblue;
+  color: ${(props) => (props.deep ? "darkorchid" : "dodgerblue")};
   font-family: "Roboto", sans-serif;
   margin-right: 30px;
   margin-bottom: 10px;
@@ -25,6 +25,14 @@ const Display = () => {
       {predictions &&
         predictions.current.map((currentPredictions, index) => {
           return <DisplayText key={index}>{currentPredictions}</DisplayText>;
+        })}
+      {predictions &&
+        predictions.deep.map((deepPredictions, index) => {
+          return (
+            <DisplayText deep key={index}>
+              {deepPredictions}
+            </DisplayText>
+          );
         })}
     </DisplayContainer>
   );

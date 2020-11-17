@@ -5,7 +5,8 @@ const correctDataStructure = (res) => {
   const { predictions } = res.body;
   const msg2 = "predictions is not array";
 
-  if (!Array.isArray(predictions)) throw new Error(msg2);
+  if (!Array.isArray(predictions.current)) throw new Error(msg2);
+  if (!Array.isArray(predictions.deep)) throw new Error(msg2);
 };
 
 describe("GET / prediction", () => {

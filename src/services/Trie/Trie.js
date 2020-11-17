@@ -2,9 +2,7 @@ import letterToKeyMapping from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {
-    this.root = {
-      predictions: { current: [], deep: [] },
-    };
+    this.root = { predictions: { current: [], deep: [] } };
   }
 
   insert(word) {

@@ -66,12 +66,12 @@ describe("TrieDictionary", () => {
       expect(mockGetWordsAtNode).toHaveBeenCalledTimes(1);
     });
 
-    it("returns empty array when given undefined", () => {
+    it("returns node structure when given undefined", () => {
       const trieDictionaryInstance = new TrieDictionary();
       const input = undefined;
 
       const assertion = trieDictionaryInstance.getAllPredictions(input);
-      const expectedResult = [];
+      const expectedResult = { current: [], deep: [] };
 
       expect(assertion).toEqual(expectedResult);
     });
