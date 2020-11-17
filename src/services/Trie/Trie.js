@@ -2,7 +2,10 @@ import letterToKeyMapping from "../../utils/letterToKeyMapping";
 
 class Trie {
   constructor() {
-    this.root = { predictions: { current: [], deep: [] } };
+    this.defaultStructure = () => {
+      return { predictions: { current: [], deep: [] } };
+    };
+    this.root = this.defaultStructure();
   }
 
   insert(word) {
@@ -12,7 +15,7 @@ class Trie {
 
     [...word].forEach((letter, index) => {
       const digit = letterToKeyMapping[letter];
-      const nodeStructure = { predictions: { current: [], deep: [] } };
+
       let isLastNode = false;
 
       if (word.length === index + 1) {
@@ -26,7 +29,7 @@ class Trie {
       }
 
       if (!currentNode.children[digit]) {
-        currentNode.children[digit] = nodeStructure;
+        currentNode.children[digit] = this.defaultStructure();
       }
 
       currentNode = currentNode.children[digit];
@@ -40,7 +43,7 @@ class Trie {
   }
 
   getPredictionsAtNode(keyString) {
-    const defaultState = { current: [], deep: [] };
+    const defaultState = this.defaultStructure().predictions;
     let currentNode = this.root;
     let predictions;
 
