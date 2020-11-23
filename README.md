@@ -21,7 +21,7 @@ This challenge was given to me as a tech test with this [description](./docs/tas
 
 **Basic functionality**
 
-The basic requirement for this test was to create an algorithm that returns the combinations of letters given a keyString i.e. `'23' => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]'. I followed TDD for implementing this algorithm on the back end. See my initial approach [here](./docs/predictive-text-approach.md). The problem with this is for a 7 digit key string it will need to calculate over 2000 combinations. If you combine this with dictionary filtering then you will have a very slow performing app.
+The basic requirement for this test was to create an algorithm that returns the combinations of letters given a keyString i.e. `'23' => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]`. I followed TDD for implementing this algorithm on the back end. See my initial approach [here](./docs/predictive-text-approach.md). The problem with this is for a 7 digit key string it will need to calculate over 2000 combinations. If you combine this with dictionary filtering then you will have a very slow performing app.
 
 **Advanced functionality - T9 Trie**
 
