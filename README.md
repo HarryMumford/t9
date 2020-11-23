@@ -25,7 +25,11 @@ The basic requirement for this test was to create an algorithm that returns the 
 
 **Advanced functionality - T9 Trie**
 
-To solve the slow combination generating problem, and to implement a real word filter I decided to use a Trie. See my approach [here](./real-word-predictions.md). The Trie uses T9 keys as nodes:
+To solve the slow combination generating problem, and to implement a real word filter I decided to use a Trie. See my approach [here](./real-word-predictions.md). Usually Tries store strings based on their prefixes. Here is an example of how a trie may be used to store words in a dictionary.
+
+![](./assets/normal-trie.PNG)
+
+The Trie uses T9 keys as nodes:
 
 ![](./assets/trie.PNG)
 
